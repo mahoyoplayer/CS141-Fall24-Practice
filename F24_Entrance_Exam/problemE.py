@@ -10,7 +10,6 @@ Expected Output:
 """
 
 from collections import deque
-from re import I, L
 
 def convertTile(tile):
     x = ord(tile[0]) - ord("a")
@@ -38,14 +37,10 @@ def main():
         if banCount == -1: return
 
         # set up bans
-        bans = set()
-
-        s = input().split()
-        for ban in s:
-            bans.add(convertTile(ban))
+        bans = {convertTile(x) for x in input().split()}
 
         # set up start and ends
-        s = input().split(" ")
+        s = input().split()
         start, target = convertTile(s[0]), convertTile(s[1])
         
 
@@ -55,7 +50,7 @@ def main():
 
         while q:
             x, y, moveCount = q.popleft()
-            if x == target[0] and y == target[1]:
+            if (x,y) == target:
                 print(f"Board {board}: {moveCount} moves")
                 found = True
                 break
