@@ -1,6 +1,6 @@
 """
-Problem C: 
-https://codeforces.com/group/vVrQkGaspd/contest/551192/problem/C
+Problem E: 
+https://codeforces.com/group/vVrQkGaspd/contest/551192/problem/E
 
 Run with:
 Get-Content problemE.txt | python problemE.py
